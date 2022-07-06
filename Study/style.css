@@ -1,0 +1,28 @@
+p{
+ 
+    font-size: 5em;
+    color: purple;
+}
+/* f =10px
+5rem 5*10 = 50px
+1 em = 14px
+5em = 70px
+ */
+
+
+.ab{
+    color: black;
+}
+
+#a{
+    font-family: "Lobster";
+}
+
+img{
+    width: 50vw;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+}
+/* left, top, right, bottom /// top, right, bottom, left */
+
+

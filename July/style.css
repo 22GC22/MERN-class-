@@ -1,0 +1,13 @@
+.btn-style{
+    background-color: darkblue;
+    color: white;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    border: none;
+}
+span{
+    font-size: 20px;
+    color: brown;
+}
