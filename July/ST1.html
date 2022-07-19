@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <style>
+        *{
+            background-color: blueviolet;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        #btn{
+            background-color: black;
+            font-size: 2rem;
+            padding: 5px 5px 5px 5px;
+            border-radius: 10px;
+        }
+        #image{
+            width: 25vw;
+            height: auto;
+            border-radius: 10%;
+            box-shadow: 15px 20px 5px rgba(255, 255, 255, 0.511);
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+    <button onclick="getUsers()" id = "btn">Get Random User</button>
+    <u><h1 id = "name"></h1></u>
+    <img src = "" id = "image"/>
+    <br/>
+    <br/>
+    <h3 id = "email"></h3>
+    </center>
+</body>
+<script>
+const getUsers = () => {
+    let url = "https://reqres.in/api/users";
+    fetch(url).then(response => response.json()).
+    then(json => {
+        // console.log(json.data);
+        json.data.map( el => {
+            // document.getElementById("name").innerHTML = el.first_name;
+            // console.log(el.first_name);
+        })
+        var i = Math.floor(Math.random() * 6);
+        // console.log(json.data[i].first_name);
+        document.getElementById("name").innerHTML = json.data[i].first_name + " " + json.data[i].last_name;
+        document.getElementById("email").innerHTML = json.data[i].email;
+        document.getElementById("image").src = json.data[i].avatar;
+    })
+    // console.log("Data Recieved");
+};
+
+// getUsers();
+</script>
+</html>
