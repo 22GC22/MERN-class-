@@ -111,3 +111,5 @@ const getNumber = (v2,v1) => {
 
 getNumber(44,55);
 
+// Array
+

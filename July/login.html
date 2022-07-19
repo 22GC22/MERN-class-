@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input-form{
+            width: 200px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 1.8rem;
+            padding-left: 5px;
+            margin-bottom: 10px;
+        }
+        .login-btn{
+            font-size: 2rem;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <center>
+        <div>
+            <p> Login Your Account</p>
+            <br>
+
+            <form onsubmit="Validate();" action="https://www.google.com">
+                <!-- Return False to stop refresh -->
+                <input type="text" class="input-form" id = "un" placeholder="Username">
+                <br>
+                <input type="password" class="input-form" id = "pass" placeholder="Password">
+                <br>
+                <input type = "submit"  class="login-btn" value="Login">
+                <br>
+            </form>
+        </div>
+        <br>
+        <p>Copyright @<span id="date"></span></p>
+    </center>
+        <script>
+            var data = { userName: "node", password: "123"};
+            var date = new Date();
+            let year = date.getFullYear();
+            let dateElememnt = document.getElementById("date");
+            dateElememnt.innerText = year;
+            dateElememnt.innerHTML = "<span style='color:red;'>${year}</span>";
+            const Validate = () => {
+                var passElement = document.getElementById("pass");
+                var userElement = document.getElementById("un")
+                console.log(passElement.value);
+                console.log(userElement.value);
+                if(
+                    userElement.value === data.userName && passElement.value === data.password
+                ){
+                    console.log("Welcome to home page");
+                    // Window.location.href
+                }
+                else{
+                    console.log("Wrong");
+                }
+            }
+        </script>
+</body>
+</html>
